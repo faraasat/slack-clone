@@ -3,7 +3,7 @@
 
 ### ⚒ Project Demo:
 ####  For Project Demo Follow the Link For: 
-#### 
+####  https://slack-clone-786.web.app/
 
 ### 🕵️‍♂️ Project Details:
 ####  This project is based on primarily on React TypeScript as well as uses other libraries too. In this app, you can view Slack UI!
@@ -27,7 +27,10 @@
 ### 📷 Project UI:
 
 <p align="center">
-  <a href="">
+  <a href="https://slack-clone-786.web.app/">
     <img width='65%' src="screen-shot.png"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  </a>
+  <a href="https://slack-clone-786.web.app/">
+    <img width='65%' src="screen-shot-2.png"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   </a>
 </p>
