@@ -17,9 +17,11 @@ import { useState } from "react";
 import db from "./firebase";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
   const [channels, setChannels] = useState<any>([]);
+  const [{ user }]: any = useStateValue();
 
   useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) =>
@@ -39,7 +41,7 @@ function Sidebar() {
           <h2>Clever Programmer</h2>
           <h3>
             <FiberManualRecord />
-            Rafeh Qazi
+            {user?.displayName}
           </h3>
         </div>
         <Create />

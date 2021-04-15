@@ -4,13 +4,12 @@ import { InfoOutlined, StarBorderOutlined } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import db from "./firebase";
 import Messages from "./Messages";
+import ChatInput from "./ChatInput";
 
 const Chat = () => {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetails] = useState<any>(null);
   const [roomMessages, setRoomMessages] = useState<any>(null);
-
-  console.log(roomMessages);
 
   useEffect(() => {
     if (roomId) {
@@ -61,6 +60,7 @@ const Chat = () => {
           );
         })}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 };

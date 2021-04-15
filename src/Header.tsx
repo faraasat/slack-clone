@@ -1,15 +1,18 @@
 import "./Header.css";
 import { Avatar } from "@material-ui/core";
 import { AccessTimeRounded, Search, HelpOutline } from "@material-ui/icons";
+import { useStateValue } from "./StateProvider";
 
 const Header = () => {
+  const [{ user }]: any = useStateValue();
+
   return (
     <div className="header">
       <div className="header__left">
         <Avatar
           className="header__avatar"
-          //   alt={user?.displayName}
-          //   src={user?.photoURL}
+          alt={user?.displayName}
+          src={user?.photoURL}
         />
         <AccessTimeRounded />
       </div>
