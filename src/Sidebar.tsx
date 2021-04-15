@@ -12,10 +12,26 @@ import {
   InsertComment,
   PeopleAlt,
 } from "@material-ui/icons";
+import { useEffect } from "react";
+import { useState } from "react";
+import db from "./firebase";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
 
 function Sidebar() {
+  const [channels, setChannels] = useState<any>([]);
+
+  useEffect(() => {
+    db.collection("rooms").onSnapshot((snapshot) =>
+      setChannels(
+        snapshot.docs.map((doc: any) => ({
+          id: doc.id,
+          name: doc.data().name,
+        }))
+      )
+    );
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -40,6 +56,9 @@ function Sidebar() {
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} title="Channels" />
+      {channels.map((channel: any) => {
+        return <SidebarOption key={channel.id} title={channel.name} />;
+      })}
     </div>
   );
 }
