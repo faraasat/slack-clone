@@ -10,7 +10,7 @@ const Chat = () => {
       <div className="chat__header">
         <div className="chat__headerLeft">
           <h4 className="chat__channelName">
-            <strong># General</strong>
+            <strong>#General</strong>
             <StarBorderOutlined />
           </h4>
         </div>
